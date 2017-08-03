@@ -98,11 +98,11 @@ pushd ${LEAPFROG_DIR}
     # Get the OSA LEAPFROG
     if [[ ! -d "openstack-ansible-ops" ]]; then
         git clone ${OA_OPS_REPO}
-        pushd openstack-ansible-ops
-            git checkout ${OA_OPS_REPO_BRANCH}
-        popd
         log "clone" "ok"
     fi
+    pushd openstack-ansible-ops
+        git checkout ${OA_OPS_REPO_BRANCH}
+    popd
 
     # Prepare rpc folder
     if [[ ! -f "${UPGRADE_LEAP_MARKER_FOLDER}/rpc-prep.complete" ]]; then
