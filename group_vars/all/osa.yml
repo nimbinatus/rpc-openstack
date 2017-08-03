@@ -122,7 +122,7 @@ elasticsearch_tcp_port: 9300
 # Adding elastic search and kibana to haproxy_extra_services
 haproxy_extra_services:
   - service:
-      haproxy_service_name: elasticsearch-http
+      haproxy_service_name: elasticsearch
       haproxy_backend_nodes: "{{ groups['elasticsearch_all'] | default([]) }}"
       haproxy_ssl: False
       haproxy_port: "{{ elasticsearch_http_port }}"
