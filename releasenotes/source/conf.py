@@ -24,13 +24,16 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
+import os
+import sys
+
 from pygments.lexers.web import PhpLexer
 from sphinx.highlighting import lexers
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-# sys.path.insert(0, os.path.abspath('.'))
+sys.path.append(os.path.abspath('sphinx_exts'))
 
 # -- General configuration ------------------------------------------------
 
@@ -89,7 +92,7 @@ version = version_info.canonical_version_string()
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_static', '_templates']
+exclude_patterns = ['_static', '_templates', 'sphinx_exts']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
